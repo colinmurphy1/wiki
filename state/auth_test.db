@@ -1,0 +1,5 @@
+# password is admin
+admin:0:$2a$10$Yh/JVyM7deh42Z7DPZ7pouAmJFVabJb9Pjl32kDL7MKs6PMmDzlJe:Admin User:admin@example.com
+
+# Disabled user
+!disabledUser:1:$2a$10$7y432Z7W12EDlZ3MbcMGnexPgHcNkDCqnFGhixZBNgSjScZDiSlRG::

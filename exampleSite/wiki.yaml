@@ -1,0 +1,24 @@
+wiki:
+  # Wiki title
+  title: "Test Wiki"
+
+  # Wiki description
+  description: "Wiki Description"
+
+  # The theme to use
+  theme: "default"
+
+  # Default file to show when going to wiki folder (e.g. / )
+  index: "index"
+  
+files:
+  # Users database file
+  users: ./wikidata/users.db
+
+  # Site pages document root
+  document_root: ./wikidata/wiki
+
+# Address and port the server listens on
+server:
+  addr: 0.0.0.0
+  port: 8080
