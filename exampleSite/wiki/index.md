@@ -4,6 +4,6 @@ If you can see this, the wiki is working.
 
 Examples:
 
-* [Markdown-formatted page](example/markdown)
-* [Plaintext page](example/plain)
-* [HTML-formatted page](example/html)
+* [Markdown-formatted page](/p/example/markdown)
+* [Plaintext page](/p/example/plain)
+* [HTML-formatted page](/p/example/html)
