@@ -1,3 +1,6 @@
 Plaintext page
 
 There's no formatting here.
+
+<em>As you can see</em>
+<strong>HTML tags are not parsed here</strong>

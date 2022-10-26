@@ -20,9 +20,10 @@ var (
 // Page struct
 type Page struct {
 	DocumentRoot string // Document root
-	Path         string // path to the page
+	Path         string // path to the page, including full file name
 	IndexPage    string // The name of the default page to see when going to a namespace
 	Namespace    string // Page Namespace
+	FileName     string // Page file name (without the format)
 	ContentType  string // Page Content type
 	Content      []byte // Page contents
 }
@@ -36,12 +37,14 @@ func (p *Page) ReadPage() error {
 	// If no path is specified (or you go to /p/), set the main namespace and index page as the page to view
 	if len(p.Path) == 0 || p.Path == "/" {
 		p.Path = p.IndexPage
+		p.FileName = p.IndexPage
 		p.Namespace = ""
 	} else {
 		// Find namespace and page to view
 		pathMatch := regexp.MustCompile("^(.*/)([^/]*)$").FindStringSubmatch(p.Path)
 
 		p.Namespace = pathMatch[1]
+		p.FileName = pathMatch[2]
 
 		// If no page is specified, use the index page
 		if pathMatch[2] == "" {
