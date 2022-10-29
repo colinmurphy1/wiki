@@ -8,8 +8,8 @@ import (
 
 // Configuration structs
 type Config struct {
-	Wiki   ConfigWiki   `yaml:"wiki"`
-	Files  configFiles  `yaml:"files"`
+	Wiki   ConfigWiki `yaml:"wiki"`
+	Files  configFiles
 	Server configServer `yaml:"server"`
 }
 
