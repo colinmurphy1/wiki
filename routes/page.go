@@ -40,5 +40,9 @@ func RenderPage(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	}
 
 	// Render the page
-	req.RenderPage(w, 200)
+	err = req.RenderPage(w, 200)
+	if err != nil {
+		log.Printf("Error rendering page: %s", err)
+		lib.HTMLPage(w, http.StatusInternalServerError, "Error parsing page, see the server log for details")
+	}
 }
