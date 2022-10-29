@@ -29,9 +29,10 @@ func Login(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	u, err := state.Users.Authenticate(username, password)
 	if err != nil {
 		lib.HTMLPage(w, http.StatusUnauthorized, "Could not sign in\n")
-		log.Print(err)
+		log.Printf("auth: %s failed to log in: %s", username, err)
 		return
 	}
 
 	lib.HTMLPage(w, http.StatusOK, fmt.Sprintf("Hello, %s!\n", u.Username))
+	log.Printf("auth: %s logged in successfully", username)
 }

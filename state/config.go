@@ -18,11 +18,11 @@ type ConfigWiki struct {
 	SiteDescription string `yaml:"description"`
 	Theme           string `yaml:"theme"`
 	IndexPage       string `yaml:"index"`
+	DocumentRoot    string `yaml:"document_root"`
 }
 
 type configFiles struct {
-	UsersDb      string `yaml:"users"`
-	DocumentRoot string `yaml:"document_root"`
+	BaseDir string // Base directory
 }
 
 type configServer struct {

@@ -161,7 +161,7 @@ func (ul *UserList) Commit() error {
 	}
 
 	// Open db file for read/write
-	db, err := os.OpenFile(Conf.Files.UsersDb, os.O_RDWR|os.O_CREATE, 0600)
+	db, err := os.OpenFile(usersDbPath, os.O_RDWR|os.O_CREATE, 0600)
 	if err != nil {
 		return err
 	}

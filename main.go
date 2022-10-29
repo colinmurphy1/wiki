@@ -1,9 +1,11 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/colinmurphy1/wiki/routes"
 	"github.com/colinmurphy1/wiki/state"
@@ -11,8 +13,17 @@ import (
 )
 
 func main() {
+	// Parse command-line arguments
+	wikiPath := flag.String("path", "", "Path to wiki directory")
+	flag.Parse()
+
+	if len(*wikiPath) == 0 {
+		flag.Usage()
+		os.Exit(1)
+	}
+
 	// Initialize list of users and configuration
-	err := state.Init("./exampleSite/wiki.yaml")
+	err := state.Init(*wikiPath)
 	if err != nil {
 		log.Fatalf("Error loading program: %s\n", err)
 		return

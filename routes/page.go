@@ -15,7 +15,7 @@ func RenderPage(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 	// Open page
 	req := page.Page{
-		DocumentRoot: state.Conf.Files.DocumentRoot,
+		DocumentRoot: state.Conf.Wiki.DocumentRoot,
 		IndexPage:    state.Conf.Wiki.IndexPage,
 		Path:         path,
 	}

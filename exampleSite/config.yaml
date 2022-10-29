@@ -8,15 +8,11 @@ wiki:
   # The theme to use
   theme: "default"
 
-  # Default file to show when going to wiki folder (e.g. / )
+  # Default file to show when going to a namespace
   index: "index"
-  
-files:
-  # Users database file
-  users: ./exampleSite/users.db
 
   # Site pages document root
-  document_root: ./exampleSite/wiki
+  document_root: wiki
 
 # Address and port the server listens on
 server:
