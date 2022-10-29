@@ -55,7 +55,7 @@ func (p *Page) RenderPage(w http.ResponseWriter, httpCode int) error {
 	}
 
 	// Get template file
-	tmplPath, _ := filepath.Abs("./templates/" + state.Conf.Wiki.Theme + "/page.html")
+	tmplPath, _ := filepath.Abs(state.Conf.Files.ThemeDir + "/page.html")
 	tmpl, err := template.ParseFiles(tmplPath)
 	if err != nil {
 		return err

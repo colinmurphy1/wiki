@@ -39,7 +39,7 @@ func main() {
 	rtr.POST("/login", routes.Login)
 
 	// Serve static content for themes
-	rtr.ServeFiles("/theme/*filepath", http.Dir("./templates/"+state.Conf.Wiki.Theme+"/static/"))
+	rtr.ServeFiles("/theme/*filepath", http.Dir(state.Conf.Files.ThemeDir+"/static/"))
 
 	// Start http server
 	err = http.ListenAndServe(fmt.Sprintf("%s:%d", state.Conf.Server.Address, state.Conf.Server.Port), rtr)

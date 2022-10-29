@@ -35,12 +35,13 @@ func Init(wikiDir string) error {
 	// Export configuration from state package
 	Conf = &config
 
-	// Set absolute paths for document root and base root
+	// Set absolute paths for document root, theme files, and base directory
 	Conf.Files.BaseDir = baseDir
 	Conf.Wiki.DocumentRoot = baseDir + "/" + Conf.Wiki.DocumentRoot
-	usersDbPath = Conf.Files.BaseDir + "/" + USERS_DB_FILE
+	Conf.Files.ThemeDir = baseDir + "/themes/" + Conf.Wiki.Theme
+	usersDbPath = baseDir + "/" + USERS_DB_FILE
 
-	// Initialize user list
+	// Initialize user database
 	if err := users.ReadDatabase(usersDbPath); err != nil {
 		return err
 	}

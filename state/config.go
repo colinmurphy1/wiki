@@ -22,7 +22,8 @@ type ConfigWiki struct {
 }
 
 type configFiles struct {
-	BaseDir string // Base directory
+	BaseDir  string // Base directory
+	ThemeDir string // Theme directory
 }
 
 type configServer struct {
