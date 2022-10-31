@@ -13,9 +13,13 @@ import (
 
 // HTML Template struct
 type HTMLPage struct {
-	Site      state.ConfigWiki // Site settings
-	PageTitle string           // Page title
-	Content   string           // HTML content
+	Site state.ConfigWiki // Site settings
+	Page pageValues
+}
+
+type pageValues struct {
+	Title   string // Page title
+	Content string // Page content
 }
 
 // Gets the page title from the h1 or h2 tags. Returns the page title, or an empty string if there is none.
@@ -64,9 +68,11 @@ func (p *Page) RenderPage(w http.ResponseWriter, httpCode int) error {
 	// Render template and write response
 	w.WriteHeader(httpCode)
 	tmpl.Execute(w, HTMLPage{
-		Site:      state.Conf.Wiki, // pass site config over
-		PageTitle: pageTitle,
-		Content:   pageContent, // rendered html
+		Site: state.Conf.Wiki, // pass site config over
+		Page: pageValues{
+			Title:   pageTitle,
+			Content: pageContent,
+		},
 	})
 
 	return nil

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/theme/water.css">
-    <title>{{if .PageTitle }}{{ .PageTitle }} | {{end}}{{ .Site.SiteTitle }}</title>
+    <title>{{if .Page.Title }}{{ .Page.Title }} | {{end}}{{ .Site.SiteTitle }}</title>
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
         &dash; {{ .Site.SiteDescription }}
     </header>
     <content>
-        {{ .Content }}
+        {{ .Page.Content }}
     </content>
 </body>
 </html>
