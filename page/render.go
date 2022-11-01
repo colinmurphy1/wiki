@@ -45,7 +45,7 @@ func (p *Page) RenderPage(w http.ResponseWriter, httpCode int) error {
 
 	// Plain text
 	case "txt":
-		pageContent = "<pre>\n" + html.EscapeString(string(p.Content)) + "\n</pre>\n"
+		pageContent = "<pre><code>" + html.EscapeString(string(p.Content)) + "</code></pre>\n"
 
 	// HTML - TODO: Sanitize HTML output
 	default:
