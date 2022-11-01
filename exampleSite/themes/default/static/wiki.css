@@ -1,0 +1,17 @@
+/* water.css enhancements */
+
+header {
+    padding: 10px;
+    background: var(--background);
+    text-align: center;
+    border-radius: 6px;
+}
+.site-title {
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+}
+

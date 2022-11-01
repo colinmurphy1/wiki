@@ -5,14 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/theme/water.css">
+    <link rel="stylesheet" href="/theme/wiki.css">
     <title>{{if .Page.Title }}{{ .Page.Title }} | {{end}}{{ .Site.SiteTitle }}</title>
 </head>
 <body>
     <header>
-        <strong>
+        <div class="site-title">
             <a href="/">{{ .Site.SiteTitle }}</a>
-        </strong>
-        &dash; {{ .Site.SiteDescription }}
+        </div>
+        {{ if .Site.SiteDescription }}
+        <div class="site-description">
+            {{ .Site.SiteDescription }}
+        </div>
+        {{ end }}
     </header>
     <content>
         {{ .Page.Content }}
