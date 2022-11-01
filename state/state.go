@@ -7,8 +7,6 @@ import (
 var (
 	Users *UserList
 	Conf  *Config
-
-	usersDbPath string // Path to the users database
 )
 
 // Constants
@@ -39,10 +37,10 @@ func Init(wikiDir string) error {
 	Conf.Files.BaseDir = baseDir
 	Conf.Wiki.DocumentRoot = baseDir + "/" + Conf.Wiki.DocumentRoot
 	Conf.Files.ThemeDir = baseDir + "/themes/" + Conf.Wiki.Theme
-	usersDbPath = baseDir + "/" + USERS_DB_FILE
+	Conf.Files.usersDb = baseDir + "/" + USERS_DB_FILE
 
 	// Initialize user database
-	if err := users.ReadDatabase(usersDbPath); err != nil {
+	if err := users.ReadDatabase(Conf.Files.usersDb); err != nil {
 		return err
 	}
 
